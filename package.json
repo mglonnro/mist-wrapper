@@ -1,0 +1,14 @@
+{
+  "name": "mist-wrapper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mist-api": "^0.10.0-beta-5"
+  }
+}
