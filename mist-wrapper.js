@@ -1,7 +1,8 @@
 var Mist = require("mist-api").Mist;
 
 /**
- * Api is a wrapper for accessing both Wish and Mist APIs.
+ * MistWrapper is a wrapper for accessing both Wish and Mist APIs.
+ * This source is released under Apache 2.0 license. For licensing of the underlying libraries, contact ControlThings Oy Ab. https://controlthings.fi
  */
 class MistWrapper {
   /**
@@ -9,7 +10,7 @@ class MistWrapper {
    * @constructor
    * @param {string} name - The name of the calling entity.
    * @param {string} coreIp - The IP address of the Wish core.
-   * @param {string} corePort - The application port of the Wish core.
+   * @param {string} corePort - The application port the Wish core is listening to.
    */
   constructor(name, coreIp, corePort) {
     this.state = {
