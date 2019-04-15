@@ -2,12 +2,12 @@
   "name": "mist-wrapper",
   "version": "0.0.1",
   "description": "",
-  "main": "api.js",
+  "main": "mist-wrapper.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC",
+  "license": "(MIT OR Apache-2.0)",
   "dependencies": {
     "mist-api": "^0.10.0-beta-5"
   }
