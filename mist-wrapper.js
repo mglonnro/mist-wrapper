@@ -1,4 +1,5 @@
 var Mist = require("mist-api").Mist;
+var BSON = require("bson");
 
 /**
  * MistWrapper is a wrapper for accessing both Wish and Mist APIs.
@@ -152,7 +153,7 @@ class MistWrapper {
     return this.wishRequest("wld.list", []);
   }
 
-  localFriendRequest(localUid, remoteUid, rhid) {
+  localFriendRequest(luid, ruid, rhid) {
     return this.wishRequest("wld.friendRequest", [luid, ruid, rhid]);
   }
 
@@ -162,6 +163,19 @@ class MistWrapper {
 
   acceptFriend(luid, ruid) {
     return this.wishRequest("identity.friendRequestAccept", [luid, ruid]);
+  }
+
+  /**
+   * Friend request to ther contact: { data: data, meta: meta }
+   */
+  friendRequest(luid, businessCard) {
+    var b = BSON.deserialize(Buffer.from(businessCard, 'base64'));
+    var c = {
+      data: b.data,
+      meta: b.meta,
+    }; 
+
+    return this.wishRequest("identity.friendRequest", [luid, c]);
   }
 
   /**
@@ -196,6 +210,10 @@ class MistWrapper {
    */
   invoke(friend, action) {
     return this.mistRequest("mist.control.invoke", [friend, action]);
+  }
+
+  write(friend, name, value) {
+    return this.mistRequest("mist.control.write", [friend, name, value]);
   }
 
   /**

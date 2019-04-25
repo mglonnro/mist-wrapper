@@ -9,6 +9,7 @@
   "author": "",
   "license": "(MIT OR Apache-2.0)",
   "dependencies": {
+    "bson": "^4.0.2",
     "mist-api": "^0.12.0"
   }
 }
