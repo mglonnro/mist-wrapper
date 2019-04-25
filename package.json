@@ -1,6 +1,6 @@
 {
   "name": "mist-wrapper",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "",
   "main": "mist-wrapper.js",
   "scripts": {

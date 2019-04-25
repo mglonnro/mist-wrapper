@@ -43,7 +43,7 @@ class MistWrapper {
         this.api.node.addEndpoint("mist", { type: "string" });
         this.api.node.addEndpoint("mist.name", {
           type: "string",
-          read: function(args, peer, cb) {
+          read: (args, peer, cb) => {
             cb(null, this.state.name);
           }
         });
@@ -58,11 +58,11 @@ class MistWrapper {
    */
   onReady() {
     return new Promise(
-      function(resolve, reject) {
+      (resolve, reject) => {
         this.api.on("ready", () => {
           resolve();
         });
-      }.bind(this)
+      }
     );
   }
 
