@@ -207,9 +207,10 @@ class MistWrapper {
    * invoke invokes a function in a peer.
    * @param {object} friend - The peer object of the friend where the action should be invoked.
    * @param {string} action - The action (endpoint name).
+   * @param {string} value - The optional value.
    */
-  invoke(friend, action) {
-    return this.mistRequest("mist.control.invoke", [friend, action]);
+  invoke(friend, action, value) {
+    return this.mistRequest("mist.control.invoke", [friend, action, value]);
   }
 
   write(friend, name, value) {
